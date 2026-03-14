@@ -3,7 +3,7 @@ name: Post Fuel Advisory
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */4 * * *"
+    - cron: "17 */2 * * *"
 
 jobs:
   post:
