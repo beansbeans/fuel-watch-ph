@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
 
 BASE_URL = "https://metrofueltracker.com/api/stations"
@@ -66,7 +66,8 @@ def build_post_text() -> str:
                 "price": highest_price,
             }
 
-    now = datetime.now().strftime("%Y-%m-%d %I:%M %p")
+    now = datetime.utcnow() + timedelta(hours=8)
+    now = now.strftime("%Y-%m-%d %I:%M %p")
 
     lines = [
         "FUEL PRICE ADVISORY PH",
